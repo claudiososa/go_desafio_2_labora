@@ -1,3 +1,19 @@
+# Product Inventory Management System
+
+This Go project implements a simple inventory management system to manage products. The program allows for adding new products, updating the quantity of existing products, and deleting products from the inventory.
+
+## Usage
+
+### Add Product
+To add a new product to the inventory, use the `addProduct` function. Provide the name, price, and quantity of the product.
+
+### Update Product Quantity
+To update the quantity of an existing product, modify the `quantity` field of the respective product directly.
+
+### Delete Product
+To delete a product from the inventory, use the `delete` function. Provide the name of the product to be deleted.
+
+
 # Contact Management System
 
 This Go project implements a simple contact management system to manage a user's contacts. The program allows for adding new contacts, searching for contacts by name or phone number, updating contact information, and deleting contacts.
