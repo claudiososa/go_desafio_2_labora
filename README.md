@@ -1,4 +1,23 @@
-# Product Inventory Management System
+# Task Management System ( src/AdminTasks )
+
+This Go project implements a simple task management system to manage pending tasks for a development team. The program allows for creating new tasks, assigning responsibilities, updating task statuses, and viewing all pending tasks.
+
+## Usage
+
+### Create New Task
+To create a new task, use the `newTask` function. Provide the name, description, and responsible person for the task. The task will be initialized with a status of "pending".
+
+### Assign Responsible
+To assign a responsible person to a task, use the `SetResponsible` method of the `Task` struct. Provide the name of the responsible person.
+
+### Update Task Status
+To update the status of a task to "in progress" or "complete", use the `SetStatus` method of the `Task` struct. Provide the desired status.
+
+### View Pending Tasks
+To view all pending tasks, use the `listTasks` function with the title "Only Pending".
+
+
+# Product Inventory Management System ( src/AdminProducts )
 
 This Go project implements a simple inventory management system to manage products. The program allows for adding new products, updating the quantity of existing products, and deleting products from the inventory.
 
@@ -14,7 +33,7 @@ To update the quantity of an existing product, modify the `quantity` field of th
 To delete a product from the inventory, use the `delete` function. Provide the name of the product to be deleted.
 
 
-# Contact Management System
+# Contact Management System ( src/AdminContacts )
 
 This Go project implements a simple contact management system to manage a user's contacts. The program allows for adding new contacts, searching for contacts by name or phone number, updating contact information, and deleting contacts.
 
@@ -33,7 +52,7 @@ To update the information of a contact (phone number, email, or address), use th
 To delete a contact from the list, use the `deleteContact` function. Provide the name of the contact to be deleted.
 
 
-# Library Book Management System
+# Library Book Management System ( src/AdminBooks )
 
 This Go project implements a simple library management system to manage a collection of books. The program allows for adding new books, searching for books by title or author, updating the status of a book (available or borrowed), and deleting books from the collection.
 
