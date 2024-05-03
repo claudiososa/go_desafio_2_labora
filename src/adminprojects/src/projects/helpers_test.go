@@ -4,13 +4,12 @@ import "testing"
 
 func TestQuantityProjectsByProgressLevel(t *testing.T) {
 
-	projects := make(map[string]Project)
-
-	// Agregar algunos proyectos al mapa
-	projects["proyecto1"] = Project{Name: "Proyecto 1", Progress: 1}
-	projects["proyecto2"] = Project{Name: "Proyecto 2", Progress: 2}
-	projects["proyecto3"] = Project{Name: "Proyecto 3", Progress: 1}
-	projects["proyecto4"] = Project{Name: "Proyecto 4", Progress: 3}
+	projects := map[string]Project{
+		"proyecto1": {Name: "Proyecto 1", Progress: 1},
+		"proyecto2": {Name: "Proyecto 2", Progress: 2},
+		"proyecto3": {Name: "Proyecto 3", Progress: 1},
+		"proyecto4": {Name: "Proyecto 4", Progress: 3},
+	}
 
 	quantity := QuantityProjectsByProgressLevel(&projects, 1)
 
