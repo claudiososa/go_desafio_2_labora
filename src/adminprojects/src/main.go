@@ -1,9 +1,9 @@
 package main
 
 import (
+	P "adminprojects/src/projects"
 	"fmt"
 	"strings"
-	"adminprojects/pkg"
 )
 
 /*
@@ -17,13 +17,12 @@ Utiliza tu imaginación para definir cómo serán los proyectos creativos
 y cómo se gestionarán en este sistema.
 */
 
-func reportProjects(projects map[string]pkg.Project, members map[string]pkg.Member){
+func reportProjects(projects map[string]P.Project, members map[string]P.Member) {
 	fmt.Println("--------------------------------------------------------------------")
-	fmt.Printf("%-20s %-30s %-20s\n","Project name", "Members", "Progress")
+	fmt.Printf("%-20s %-30s %-20s\n", "Project name", "Members", "Progress")
 	fmt.Println("--------------------------------------------------------------------")
 
-	
-	for p := range projects{
+	for p := range projects {
 		project := projects[p]
 
 		members := strings.Join(project.Members, ",")
@@ -40,18 +39,16 @@ func reportProjects(projects map[string]pkg.Project, members map[string]pkg.Memb
 			progress = "Finished"
 		}
 
-		fmt.Printf("%-20s %-30s %-20s\n",project.Name, members, progress)
+		fmt.Printf("%-20s %-30s %-20s\n", project.Name, members, progress)
 	}
 	fmt.Println("--------------------------------------------------------------------")
 }
 
-
 func main() {
 
-	members := make(map[string]pkg.Member)
+	members := make(map[string]P.Member)
 
-	var myMember pkg.Member
-
+	var myMember P.Member
 
 	//Creo y agrego nuevos Members al map members
 	memb := myMember.NewMember("Juan", 22)
@@ -62,13 +59,13 @@ func main() {
 	myMember.AddMember(*memb1, &members)
 	myMember.AddMember(*memb2, &members)
 
-	projects := make(map[string]pkg.Project)
+	projects := make(map[string]P.Project)
 
 	// Seguimiento del progreso del proyecto, incluyendo hitos y fechas límite.
 
 	// Creo una variable de tipo Milestone
 
-	var myMilestone pkg.Milestone
+	var myMilestone P.Milestone
 
 	// Obtengo una map con un listado de hitos creado para asignarlo a un proyecto.
 	milestone1 := myMilestone.CreateMilestone(1)
@@ -78,7 +75,7 @@ func main() {
 	// Implementar un sistema para la creación de nuevos proyectos creativos.
 	listMembers := []string{}
 
-	var myProject pkg.Project
+	var myProject P.Project
 
 	project1 := myProject.NewProject("project1", listMembers, 1, milestone1)
 	project2 := myProject.NewProject("project2", listMembers, 1, milestone2)
@@ -90,7 +87,6 @@ func main() {
 	myProject.AddProject(*project3, &projects)
 	myProject.AddProject(*project4, &projects)
 
-
 	// Permitir la asignación de miembros del equipo a proyectos.
 
 	myProject.AddMemeberToProject("Carlos", "project1", &projects)
@@ -99,7 +95,15 @@ func main() {
 	myProject.AddMemeberToProject("Maria", "project3", &projects)
 	myProject.AddMemeberToProject("Carlos", "project4", &projects)
 
-	// Generación de informes de estado del proyecto, que muestren el progreso, los miembros 
-
+	// Generación de informes de estado del proyecto, que muestren el progreso, los miembros
 	reportProjects(projects, members)
+
+	//Obtener la cantidad de proyectos con un determinado nivel de progreso.
+	progressLevel := 1 //started
+
+	quantityProject := P.QuantityProjectsByProgressLevel(&projects, progressLevel)
+
+	fmt.Printf("\nQuantity of projects with progress level '%d' --> %d\n\n", progressLevel, quantityProject)
+
+	//reportProjects(projects, members)
 }
