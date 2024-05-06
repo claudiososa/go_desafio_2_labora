@@ -1,9 +1,9 @@
-# Game RPG ( src/gamerpg )
-
+# Game RPG ( src/gamerpg )  -> 6
+ 
 # Project Management System ( src/adminprojects ) -> 5
 
 
-# Task Management System ( src/AdminTasks ) -> 6
+# Task Management System ( src/AdminTasks )
 
 This Go project implements a simple task management system to manage pending tasks for a development team. The program allows for creating new tasks, assigning responsibilities, updating task statuses, and viewing all pending tasks.
 
